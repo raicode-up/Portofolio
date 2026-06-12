@@ -1,0 +1,101 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { font-family: 'Inter', sans-serif; color: #1E293B; }
+
+.teks-gradien {
+  background: linear-gradient(135deg, #F7CAC9 0%, #92A8D1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.kaca {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(146, 168, 209, 0.18);
+}
+
+.tombol-utama {
+  background: linear-gradient(135deg, #92A8D1 0%, #7b96c6 100%);
+  color: #fff;
+  padding: 0.65rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.tombol-utama:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(146, 168, 209, 0.45);
+}
+
+.foto-cahaya {
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #F7CAC9, #92A8D1) border-box;
+  box-shadow: 0 0 28px rgba(247, 202, 201, 0.45),
+              0 0 48px rgba(146, 168, 209, 0.25);
+}
+
+.garis-linimasa::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #F7CAC9, #92A8D1);
+  transform: translateX(-50%);
+}
+
+.kartu-minat {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.kartu-minat:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 36px rgba(146, 168, 209, 0.28),
+              0 2px  8px  rgba(247, 202, 201, 0.22);
+}
+
+.ikon-sosial {
+  transition: color 0.2s, transform 0.2s;
+  color: #64748b;
+}
+.ikon-sosial:hover {
+  color: #92A8D1;
+  transform: translateY(-3px);
+}
+
+.muncul {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.muncul.terlihat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tautan-nav {
+  position: relative;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.tautan-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #F7CAC9, #92A8D1);
+  transition: width 0.25s ease;
+}
+.tautan-nav:hover { color: #92A8D1; }
+.tautan-nav:hover::after { width: 100%; }
+
+#menu-mobile { transition: max-height 0.3s ease, opacity 0.3s ease; }

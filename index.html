@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rai's Portofolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rose:    '#F7CAC9', 
+            serenity:'#92A8D1',
+            slate:   '#1E293B',
+          },
+          fontFamily: {
+            sans:    ['Inter',   'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+          },
+          backgroundImage: {
+            'hero-gradient': 'linear-gradient(135deg, #F7CAC9 0%, #92A8D1 100%)',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%':      { transform: 'translateY(-10px)' },
+            },
+          },
+          animation: {
+            fadeUp: 'fadeUp 0.7s ease forwards',
+            float:  'float 4s ease-in-out infinite',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-slate antialiased">
+
+  <nav id="navigasi" class="kaca fixed top-0 left-0 right-0 z-50 transition-shadow duration-300">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
+
+      <a href="#beranda" class="font-display font-bold text-lg tracking-tight">
+        <span class="teks-gradien">With love, Rai</span><span class="text-slate">.</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#beranda"      class="tautan-nav">Profile</a></li>
+        <li><a href="#pendidikan" class="tautan-nav">Education</a></li>
+        <li><a href="#minat" class="tautan-nav">Interests</a></li>
+        <li><a href="#kontak"   class="tautan-nav">Contact</a></li>
+      </ul>
+
+      <button
+        id="tombol-menu"
+        aria-label="Toggle menu"
+        class="md:hidden flex flex-col justify-center items-center gap-1.5 w-9 h-9 rounded-lg hover:bg-slate-100 transition-colors"
+      >
+        <span class="garis-menu block w-5 h-0.5 bg-slate rounded-full transition-all duration-300"></span>
+        <span class="garis-menu block w-5 h-0.5 bg-slate rounded-full transition-all duration-300"></span>
+        <span class="garis-menu block w-5 h-0.5 bg-slate rounded-full transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <div
+      id="menu-mobile"
+      class="md:hidden overflow-hidden max-h-0 opacity-0 bg-white/95 backdrop-blur-md border-t border-slate-100"
+    >
+      <ul class="flex flex-col px-6 py-4 gap-4">
+        <li><a href="#beranda"      class="tautan-mobile block text-slate-600 font-medium hover:text-serenity transition-colors">Profile</a></li>
+        <li><a href="#pendidikan" class="tautan-mobile block text-slate-600 font-medium hover:text-serenity transition-colors">Education</a></li>
+        <li><a href="#minat" class="tautan-mobile block text-slate-600 font-medium hover:text-serenity transition-colors">Interests</a></li>
+        <li><a href="#kontak"   class="tautan-mobile block text-slate-600 font-medium hover:text-serenity transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="beranda" class="min-h-screen flex items-center pt-16 bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-20">
+
+        <div class="muncul">
+          <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#92A8D1] bg-[#92A8D1]/10 px-3 py-1 rounded-full mb-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#92A8D1] animate-pulse"></span>
+            Open to Opportunities
+          </span>
+
+          <h1 class="font-display text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-tight mb-4">
+            Hi, I'm<br/>
+            <span class="teks-gradien">Nabila Raisiya Zahrani</span>
+          </h1>
+
+          <p class="text-slate-500 text-base sm:text-lg leading-relaxed max-w-md mb-3">
+            Information Systems student, bridging <span class="text-serenity font-semibold">technology</span> and <span class="text-[#c9a0a0] font-semibold">business</span> through design-driven thinking.
+          </p>
+          <p class="text-slate-400 text-sm mb-8">
+            2nd Semester &bull; Brawijaya University &bull; Malang, Indonesia
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#kontak" class="tombol-utama">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              Let's Connect
+            </a>
+            <a
+              href="#pendidikan"
+              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#92A8D1]/40 text-[#92A8D1] font-semibold text-sm hover:bg-[#92A8D1]/8 transition-colors"
+            >
+              View Journey
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div class="flex gap-8 mt-10 pt-8 border-t border-slate-100">
+            <div>
+              <p class="font-display font-bold text-2xl teks-gradien">2nd</p>
+              <p class="text-slate-400 text-xs mt-0.5">Semester</p>
+            </div>
+            <div>
+              <p class="font-display font-bold text-2xl teks-gradien">3+</p>
+              <p class="text-slate-400 text-xs mt-0.5">Personal Projects</p>
+            </div>
+            <div>
+              <p class="font-display font-bold text-2xl teks-gradien">∞</p>
+              <p class="text-slate-400 text-xs mt-0.5">Curiosity</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center md:justify-end reveal" style="transition-delay:0.15s">
+          <div class="relative animate-float">
+            <div class="absolute -top-8 -left-8 w-32 h-32 rounded-full bg-[#F7CAC9]/30 blur-2xl -z-10"></div>
+            <div class="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-[#92A8D1]/20 blur-2xl -z-10"></div>
+            <div class="foto-cahaya w-64 h-64 sm:w-72 sm:h-72 xl:w-80 xl:h-80 rounded-3xl overflow-hidden relative bg-gradient-to-br from-[#F7CAC9]/30 to-[#92A8D1]/20">
+              <div class="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                
+                <p class="text-slate-300 text-[10px]"><img src="Images/Raipic.JPG" alt="Rai profile photo" class="w-full h-full object-cover"/>
+                </p>
+              </div>
+              
+            </div>
+
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg shadow-slate-100 px-4 py-2.5 flex items-center gap-2 border border-slate-100">
+              <div class="w-8 h-8 rounded-xl bg-[#92A8D1]/15 flex items-center justify-center">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-serenity"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-xs text-slate">IS Student</p>
+                <p class="text-[10px] text-slate-400">Class of 2028</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan" class="bg-[#F8FAFC] py-24">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-xs font-bold tracking-widest uppercase text-[#92A8D1] mb-2">Academic Journey</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate mb-3">Education</h2>
+        <p class="text-slate-400 max-w-sm mx-auto text-sm">Building a strong foundation.</p>
+      </div>
+
+      <div class="relative garis-linimasa space-y-8">
+
+        <div class="relative flex md:justify-end reveal">
+          <div class="absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#92A8D1] z-10 shadow-sm"></div>
+
+          <div class="md:w-[46%] bg-white rounded-2xl p-6 shadow-sm border border-slate-100 ml-6 md:ml-0 kartu-minat">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase text-[#92A8D1] bg-[#92A8D1]/10 px-2.5 py-1 rounded-full mb-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#92A8D1] animate-pulse"></span>
+              Currently Enrolled
+            </span>
+            <h3 class="font-display font-bold text-base text-slate mb-0.5">Bachelor of Information Systems</h3>
+            <p class="text-[#92A8D1] font-semibold text-sm mb-1">Brawijaya University</p>
+            <p class="text-slate-400 text-xs mb-4">2025 — Present &bull; GPA: 3.95 / 4.0</p>
+
+            <p class="text-slate-500 text-xs font-semibold uppercase tracking-wide mb-2">Favourite Courses</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#F7CAC9]/40 text-[#b07a79]">Database Programming</span>
+              <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">Business Management</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative flex md:justify-start reveal">
+          <div class="absolute left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#F7CAC9] z-10 shadow-sm"></div>
+
+          <div class="md:w-[46%] bg-white rounded-2xl p-6 shadow-sm border border-slate-100 ml-6 md:ml-0 kartu-minat">
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase text-[#c9a0a0] bg-[#F7CAC9]/30 px-2.5 py-1 rounded-full mb-3">
+              <i data-lucide="check-circle-2" class="w-3 h-3"></i>
+              Graduated
+            </span>
+            <h3 class="font-display font-bold text-base text-slate mb-0.5">Science</h3>
+            <p class="text-[#c9a0a0] font-semibold text-sm mb-1">SMA Negeri 2 Samarinda</p>
+            <p class="text-slate-400 text-xs mb-4">Graduation Year 2024</p>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Developed strong analytical and logical thinking skills, sparking a passion for technology and digital problem-solving.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="minat" class="bg-white py-24">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-xs font-bold tracking-widest uppercase text-[#92A8D1] mb-2">What Drives Me</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate mb-3">Areas of Interest</h2>
+        <p class="text-slate-400 max-w-sm mx-auto text-sm">Three pillars shaping how I think about technology.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <div class="kartu-minat bg-[#F8FAFC] rounded-2xl p-7 border border-slate-100 reveal group">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#F7CAC9] to-[#f0aaaa] flex items-center justify-center mb-5 shadow-sm">
+            <i data-lucide="layout-template" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate text-lg mb-2">UI/UX Design</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Crafting intuitive, human-centered interfaces that delight users and reduce friction, because great design is invisible.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#F7CAC9]/40 text-[#b07a79]">Figma</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#F7CAC9]/40 text-[#b07a79]">Prototyping</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#F7CAC9]/40 text-[#b07a79]">User Research</span>
+          </div>
+        </div>
+
+        <div class="kartu-minat bg-white rounded-2xl p-7 border border-[#92A8D1]/20 shadow-md shadow-[#92A8D1]/10 reveal group" style="transition-delay:0.1s">
+          <div class="h-1 w-full rounded-full bg-hero-gradient mb-5 -mt-1 mx-auto" style="background:linear-gradient(90deg,#F7CAC9,#92A8D1)"></div>
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#92A8D1] to-[#6b8fc0] flex items-center justify-center mb-5 shadow-sm">
+            <i data-lucide="bar-chart-3" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate text-lg mb-2">Business Analysis</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Understanding organizational workflows and translating real-world business needs into smart, scalable technology solutions.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">ERP Systems</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">BPMN</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">Data Flow</span>
+          </div>
+        </div>
+
+        <div class="kartu-minat bg-[#F8FAFC] rounded-2xl p-7 border border-slate-100 reveal group" style="transition-delay:0.2s">
+
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#92A8D1] to-[#F7CAC9] flex items-center justify-center mb-5 shadow-sm">
+            <i data-lucide="code-2" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-slate text-lg mb-2">Web Development</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Building responsive, accessible front-ends using modern web technologies, and turning ideas into live, interactive experiences.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#F7CAC9]/40 text-[#b07a79]">HTML/CSS</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">JavaScript</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[#92A8D1]/15 text-[#5a7aad]">Tailwind</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="kontak" class="bg-[#F8FAFC] pt-24 pb-0">
+    <div class="max-w-2xl mx-auto px-5 sm:px-8 text-center">
+
+      <div class="muncul">
+        <p class="text-xs font-bold tracking-widest uppercase text-[#92A8D1] mb-2">Don't be shy</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate mb-4">Let's Connect</h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-10">
+          Whether you want to collaborate, share knowledge, or just say hello, my inbox and DMs are always open. ✨
+        </p>
+      </div>
+
+      <div class="muncul" style="transition-delay:0.1s">
+        <a href="mailto:nabilaraisiya@gmail.com" class="tombol-utama text-base px-8 py-3.5 mx-auto">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          Say Hello
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4 my-10 reveal" style="transition-delay:0.15s">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <span class="text-slate-300 text-xs">or find me on</span>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <div class="flex justify-center gap-8 reveal" style="transition-delay:0.2s">
+
+        <a href="https://linkedin.com/in/nabilaraisiyazahrani" target="_blank" rel="noopener" aria-label="LinkedIn" class="ikon-sosial flex flex-col items-center gap-1">
+          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center hover:border-[#92A8D1]/40 transition-colors">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] text-slate-400">LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/raicode-up" target="_blank" rel="noopener" aria-label="GitHub" class="ikon-sosial flex flex-col items-center gap-1">
+          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center hover:border-[#92A8D1]/40 transition-colors">
+            <i data-lucide="github" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] text-slate-400">GitHub</span>
+        </a>
+
+        <a href="https://instagram.com/raiyoongi" target="_blank" rel="noopener" aria-label="Instagram" class="ikon-sosial flex flex-col items-center gap-1">
+          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center hover:border-[#92A8D1]/40 transition-colors">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] text-slate-400">Instagram</span>
+        </a>
+
+        <a href="mailto:nabilaraisiya@gmail.com" aria-label="Email" class="ikon-sosial flex flex-col items-center gap-1">
+          <div class="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center hover:border-[#92A8D1]/40 transition-colors">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+          </div>
+          <span class="text-[10px] text-slate-400">Email</span>
+        </a>
+      </div>
+
+    </div>
+
+    <footer class="mt-16 border-t border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p class="text-slate-400 text-xs">
+          &copy; 2025 <span class="font-semibold text-slate-500">Nabila Raisiya Zahrani</span>. Built with care &amp; coffee ☕
+        </p>
+        <p class="text-slate-300 text-xs">
+          Inspired by <span class="teks-gradien font-semibold">SEVENTEEN</span> 
+        </p>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    lucide.createIcons();
+
+    const hamburger  = document.getElementById('tombol-menu');
+    const mobileMenu = document.getElementById('menu-mobile');
+    const hamBars    = document.querySelectorAll('.garis-menu');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+
+      if (menuOpen) {
+        mobileMenu.style.maxHeight = '300px';
+        mobileMenu.style.opacity  = '1';
+        hamBars[0].style.transform = 'translateY(8px) rotate(45deg)';
+        hamBars[1].style.opacity   = '0';
+        hamBars[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+      } else {
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity   = '0';
+        hamBars[0].style.transform = '';
+        hamBars[1].style.opacity   = '';
+        hamBars[2].style.transform = '';
+      }
+    });
+
+    /* Close mobile menu on link click */
+    document.querySelectorAll('.tautan-mobile').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity   = '0';
+        hamBars[0].style.transform = '';
+        hamBars[1].style.opacity   = '';
+        hamBars[2].style.transform = '';
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const navigasi = document.getElementById('navigasi');
+      if (window.scrollY > 10) {
+        navigasi.classList.add('shadow-sm', 'shadow-slate-200/60');
+      } else {
+        navigasi.classList.remove('shadow-sm', 'shadow-slate-200/60');
+      }
+    });
+
+    const revealEls = document.querySelectorAll('.muncul');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('terlihat');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('#beranda .muncul').forEach(el => {
+      setTimeout(() => el.classList.add('terlihat'), 100);
+    });
+  </script>
+
+
+</body>
+</html>
